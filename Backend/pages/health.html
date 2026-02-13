@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Health Check</title>
+    <link rel="stylesheet" href="/pages/assets/styles.css" />
+  </head>
+  <body>
+    <section class="page">
+      <div class="page__header">
+        <p class="eyebrow">Finsense</p>
+        <h1 class="page__title">Health Check</h1>
+        <p class="lead">Verify server is alive.</p>
+        <nav class="nav">
+          <a href="/pages/index">Home</a>
+          <a href="/pages/register">Register</a>
+          <a href="/pages/verify-otp">Verify OTP</a>
+          <a href="/pages/device">Device</a>
+          <a href="/pages/profile">Profile</a>
+          <a href="/pages/sync">Sync</a>
+        </nav>
+      </div>
+
+      <div class="panel">
+        <div class="form-grid">
+          <button class="btn" onclick="health()">GET /health</button>
+          <div id="healthStatus" class="status"></div>
+        </div>
+      </div>
+    </section>
+
+    <script src="/pages/assets/app.js"></script>
+  </body>
+</html>

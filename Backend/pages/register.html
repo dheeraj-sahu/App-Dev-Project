@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Register OTP</title>
+    <link rel="stylesheet" href="/pages/assets/styles.css" />
+  </head>
+  <body>
+    <section class="page">
+      <div class="page__header">
+        <p class="eyebrow">Finsense</p>
+        <h1 class="page__title">Register (OTP)</h1>
+        <p class="lead">Send an OTP to a phone number.</p>
+        <nav class="nav">
+          <a href="/pages/index">Home</a>
+          <a href="/pages/verify-otp">Verify OTP</a>
+          <a href="/pages/device">Device</a>
+          <a href="/pages/profile">Profile</a>
+          <a href="/pages/sync">Sync</a>
+          <a href="/pages/health">Health</a>
+        </nav>
+      </div>
+
+      <div class="panel">
+        <div class="form-grid">
+          <div>
+            <label>Phone</label>
+            <input id="regPhone" placeholder="+15550001111" />
+          </div>
+          <button class="btn" onclick="register()">Send OTP</button>
+          <div id="regStatus" class="status"></div>
+          <p class="note">OTP appears in the server logs for dev.</p>
+        </div>
+      </div>
+    </section>
+
+    <script src="/pages/assets/app.js"></script>
+  </body>
+</html>

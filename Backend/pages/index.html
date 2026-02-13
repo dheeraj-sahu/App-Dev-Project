@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Finsense Test Pages</title>
+    <link rel="stylesheet" href="/pages/assets/styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__text">
+        <p class="eyebrow">Finsense Backend</p>
+        <h1>API Test Pages</h1>
+        <p class="lead">Pick a feature-specific page and test fast.</p>
+        <div class="hero__actions">
+          <a class="btn" href="/pages/register">Start with Register</a>
+          <a class="btn btn--ghost" href="/pages/health">Health Check</a>
+        </div>
+      </div>
+      <div class="hero__panel">
+        <div class="token-panel">
+          <h3>Access Token</h3>
+          <div class="token-row">
+            <input id="tokenInput" placeholder="Paste token here" />
+            <button class="btn btn--small" onclick="setTokenFromInput()">Use</button>
+          </div>
+          <div class="token-actions">
+            <button class="btn btn--ghost btn--small" onclick="clearToken()">Clear</button>
+          </div>
+          <div id="tokenStatus" class="status"></div>
+          <p class="note">Token saved in sessionStorage to work across pages.</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="grid">
+      <a class="card" href="/pages/register">
+        <h2>Register (OTP)</h2>
+        <p>Send an OTP to a phone number.</p>
+        <span class="pill">POST /register</span>
+      </a>
+      <a class="card" href="/pages/verify-otp">
+        <h2>Verify OTP</h2>
+        <p>Validate OTP and receive token.</p>
+        <span class="pill">POST /verify-otp</span>
+      </a>
+      <a class="card" href="/pages/device">
+        <h2>Device Register</h2>
+        <p>Attach a device with a public key.</p>
+        <span class="pill">POST /device/register</span>
+      </a>
+      <a class="card" href="/pages/profile">
+        <h2>Encrypted Profile</h2>
+        <p>Upload encrypted profile payload.</p>
+        <span class="pill">POST /profile/encrypted</span>
+      </a>
+      <a class="card" href="/pages/sync">
+        <h2>Sync Transactions</h2>
+        <p>Push and pull transaction changes.</p>
+        <span class="pill">POST /sync</span>
+      </a>
+      <a class="card" href="/pages/health">
+        <h2>Health Check</h2>
+        <p>Verify server is alive.</p>
+        <span class="pill">GET /health</span>
+      </a>
+    </main>
+
+    <script src="/pages/assets/app.js"></script>
+  </body>
+</html>
