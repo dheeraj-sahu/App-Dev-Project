@@ -1,13 +1,16 @@
-import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
-import { createMaterialTopTabNavigator, MaterialTopTabNavigationEventMap, MaterialTopTabNavigationOptions } from '@react-navigation/material-top-tabs';
-import { ParamListBase, TabNavigationState } from '@react-navigation/native';
-import { withLayoutContext } from 'expo-router';
-import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
+import {
+  createMaterialTopTabNavigator,
+  MaterialTopTabNavigationEventMap,
+  MaterialTopTabNavigationOptions,
+} from "@react-navigation/material-top-tabs";
+import { ParamListBase, TabNavigationState } from "@react-navigation/native";
+import { withLayoutContext } from "expo-router";
+import { StyleSheet, View } from "react-native";
 
-import CustomHeader from '@/components/CustomHeader';
-import FloatingActions from '@/components/FloatingActions';
-import { Colors } from '@/constants/theme';
+import CustomHeader from "@/components/CustomHeader";
+import FloatingActions from "@/components/FloatingActions";
+import { Colors } from "@/constants/theme";
 
 const { Navigator } = createMaterialTopTabNavigator();
 
@@ -18,9 +21,9 @@ export const MaterialTopTabs = withLayoutContext<
   MaterialTopTabNavigationEventMap
 >(Navigator);
 
-import { IncomingTransactionModal } from '@/components/IncomingTransactionModal';
-import { useTheme } from '@/context/ThemeContext';
-import { useState } from 'react';
+import { IncomingTransactionModal } from "@/components/IncomingTransactionModal";
+import { useTheme } from "@/context/ThemeContext";
+import { useState } from "react";
 
 export default function TabLayout() {
   const { theme: currentTheme } = useTheme();
@@ -50,9 +53,9 @@ export default function TabLayout() {
             height: 0, // Remove indicator for a bottom-tab feel
           },
           tabBarLabelStyle: {
-            textTransform: 'none',
+            textTransform: "none",
             fontSize: 10,
-            fontWeight: '600',
+            fontWeight: "600",
             marginTop: 4,
           },
           tabBarIconStyle: {
@@ -66,36 +69,46 @@ export default function TabLayout() {
         <MaterialTopTabs.Screen
           name="index"
           options={{
-            title: 'Home',
-            tabBarIcon: ({ color }) => <Ionicons size={24} name="home" color={color} />,
+            title: "Home",
+            tabBarIcon: ({ color }) => (
+              <Ionicons size={24} name="home" color={color} />
+            ),
           }}
         />
         <MaterialTopTabs.Screen
           name="explore"
           options={{
-            title: 'Trends',
-            tabBarIcon: ({ color }) => <Ionicons size={24} name="stats-chart" color={color} />,
+            title: "Trends",
+            tabBarIcon: ({ color }) => (
+              <Ionicons size={24} name="stats-chart" color={color} />
+            ),
           }}
         />
         <MaterialTopTabs.Screen
           name="chat"
           options={{
-            title: 'AI Chat',
-            tabBarIcon: ({ color }) => <MaterialCommunityIcons name="robot" size={24} color={color} />,
+            title: "AI Chat",
+            tabBarIcon: ({ color }) => (
+              <MaterialCommunityIcons name="robot" size={24} color={color} />
+            ),
           }}
         />
         <MaterialTopTabs.Screen
           name="budget"
           options={{
-            title: 'Budget',
-            tabBarIcon: ({ color }) => <Ionicons size={24} name="pie-chart" color={color} />,
+            title: "Budget",
+            tabBarIcon: ({ color }) => (
+              <Ionicons size={24} name="pie-chart" color={color} />
+            ),
           }}
         />
         <MaterialTopTabs.Screen
           name="profile"
           options={{
-            title: 'Profile',
-            tabBarIcon: ({ color }) => <Ionicons size={24} name="person" color={color} />
+            title: "Profile",
+            tabBarIcon: ({ color }) => (
+              <Ionicons size={24} name="person" color={color} />
+            ),
           }}
         />
 
@@ -111,22 +124,21 @@ export default function TabLayout() {
         */}
       </MaterialTopTabs>
 
-      <FloatingActions onScanPress={() => setShowScanModal(true)} />
+      <FloatingActions />
 
       <IncomingTransactionModal
         visible={showScanModal}
         parsedData={null}
         onClose={() => setShowScanModal(false)}
         onSave={(data) => {
-          // Actual save logic is handled in the modal via navigation, 
-          // or we could handle it here. 
+          // Actual save logic is handled in the modal via navigation,
+          // or we could handle it here.
           // For now, modal navigates to add-transaction.
           setShowScanModal(false);
         }}
       />
-    </View >
+    </View>
   );
 }
 
-const styles = StyleSheet.create({
-});
+const styles = StyleSheet.create({});
